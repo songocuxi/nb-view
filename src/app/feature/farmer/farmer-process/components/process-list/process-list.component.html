@@ -1,0 +1,81 @@
+<div class="process-list" *ngIf="!personalProcessBool; else personalProcess">
+  <div class="process-list__title">Chọn quy trình bắt đầu</div>
+  <div class="process-list__list">
+    <div class="process-list__list__item" *ngFor="let process of projectList">
+      <div class="process-list__list__item__name-process">
+        {{ process.projectName }}
+      </div>
+      <div class="process-list__list__item__duration">
+        <span class="title">Thời gian: </span>
+        <span class="value">{{ process.projectDuration }}</span>
+      </div>
+      <div class="process-list__list__item__action">
+        <div class="process-list__list__item__action__detail-btn">Chi tiết</div>
+        <div class="process-list__list__item__action__selection-btn" (click)="confirmAddNewProcess(process)" >Chọn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #personalProcess>
+  <div class="personal-process-list">
+    <div class="personal-process-list__executing-process">
+      <div class="personal-process-list__executing-process__title">
+        Quy trình cá nhân
+      </div>
+      <div class="personal-process-list__executing-process__list">
+        <div
+          class="personal-process-list__executing-process__list__item"
+          *ngFor="let process of projectListByCreatorId"
+        >
+          <div
+            class="personal-process-list__executing-process__list__item__name-process"
+          >
+            {{ process.projectName }}
+          </div>
+          <div
+            class="personal-process-list__executing-process__list__item__object"
+          >
+            <span class="title">Thời gian: </span>
+            <span class="value">{{ process.projectDuration }}</span>
+          </div>
+          <div
+            class="personal-process-list__executing-process__list__item__period"
+          >
+            <span class="title">Giai đoạn: </span>
+            <span class="value"
+              >{{ process.projectStartAt }} - {{ process.projectEndAt }}</span
+            >
+          </div>
+          <div
+            class="personal-process-list__executing-process__list__item__executing-date"
+          ></div>
+          <div
+            class="personal-process-list__executing-process__list__item__action"
+          >
+          <div
+            class="personal-process-list__executing-process__list__item__action__delete-btn"
+            (click)="confirmDeleteProcess(process)"
+          >
+            Xóa
+          </div>
+            <div
+              class="personal-process-list__executing-process__list__item__action__detail-btn"
+              (click)="openProjectDetail(process.projectId)"
+            >
+              Chi tiết
+            </div>
+          </div>
+        </div>
+        <div
+          class=" personal-process-list__executing-process__list__item personal-process-list__executing-process__list__item--add-new"
+          (click)="openTemplateProcessPage()"
+        >
+          <fa-icon [icon]="faPlus"></fa-icon>
+          Thêm quy trình
+        </div>
+      </div>
+    </div>
+    <div class="personal-process-list__recommendation-process"></div>
+  </div>
+</ng-template>

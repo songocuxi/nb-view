@@ -1,0 +1,207 @@
+<!-- <section>
+    <h2>Modify notebook</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 highlight">
+                <h3>Notebook</h3> -->
+
+                <!-- <div class="highlight">
+                    <table *ngFor="let item of listDataField">
+                        <div *ngIf="item.isEdit" class="container div_edit">
+                            <form [formGroup]="userForm" class="row">
+                                <div class="col-lg-6" >
+                                    <input type='text' name="Title" formControlName="Title" placeholder="| Title" class="input"/>
+                                </div>
+                                <div class="col-lg-5">
+                                    <select class="select" name="Type" formControlName="Type" class="select">
+                                        <option value="default" selected hidden>| Input type</option>
+                                        <option value="text">Text</option>
+                                        <option value="image">Image</option>
+                                    </select>
+                                </div>
+                                <div class="row small_div">
+                                    <mat-divider class="mat-divider_small"></mat-divider>
+                                    <div *ngIf="selectedItems.length > 0; else noTask">
+                                        <p>Assign related tasks</p>
+                                    </div>
+                                    <ng-template #noTask >
+                                        <p>Related tasks</p>
+                                    </ng-template>
+                                    <div *ngIf="selectedItems.length > 0; else noSelection">
+                                        <mat-chip *ngFor="let item of selectedItems">
+                                            {{item.title}}
+                                        </mat-chip>
+                                    </div>
+                                    <ng-template #noSelection >
+                                        <p>No item selected</p>
+                                    </ng-template>
+                                    <button >Assign</button>
+                                </div>
+                            </form>
+                            <button (click)="update(item)">Update</button>
+                            <button (click)="cancel(item)">Cancel</button>
+                        </div>
+                        <div *ngIf="!item.isEdit">
+                            <thead>
+                                <tr>
+                                    <th class="th_title">Title</th>
+                                    <th class="th_type">Type</th>
+                                    <th class="th_task">Task</th>
+                                    <th class="th_button"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span>{{item.Title}}</span></td>
+                                    <td><span>{{item.Type}}</span></td>
+                                    <td><span>{{item.Task}}</span></td>
+                                    <td>
+                                        <button type="button" (click)="edit(item)" class="button_table">Edit</button>
+                                        <button type="button" (click)="removeField(item)" class="button_table">remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </div> -->
+                <!-- <div class="highlight">
+                    <button class="create_button" (click)="addField()"><mat-icon fontIcon="+"></mat-icon></button>
+                </div> -->
+                <!-- <div class="small-div" *ngFor="let field of fieldList" [class.small-div__isNotEdited]="field.status">
+                    <div class=" container">
+                        <form [formGroup]="userForm" class="row">
+                            <div class="col-lg-6" >
+                                <input type='text' name="Title" formControlName="Title" placeholder="| Title" class="input"/>
+                            </div>
+                            <div class="col-lg-5" *ngIf="field.status">
+                                <select class="select" name="Type" formControlName="Type" class="select">
+                                    <option value="default" selected hidden>| Input type</option>
+                                    <option value="text">Text</option>
+                                    <option value="image">Image</option>
+                                </select>
+                            </div>
+                            <mat-divider class="mat-divider_small"></mat-divider>
+                            <div class="row small_div"  *ngIf="field.status">
+                                
+                                <div *ngIf="selectedItems.length > 0; else noTask">
+                                    <p>Assign related tasks</p>
+                                </div>
+                                <ng-template #noTask >
+                                    <p>Related tasks</p>
+                                </ng-template>
+                                <div *ngIf="selectedItems.length > 0; else noSelection">
+                                    <mat-chip *ngFor="let item of selectedItems">
+                                        {{item.title}}
+                                    </mat-chip>
+                                </div>
+                                <ng-template #noSelection >
+                                    <p>No item selected</p>
+                                </ng-template>
+                                <button >Assign</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+               
+            <!-- </div>
+            <div class="col-lg-5 highlight">  
+                <app-modification-task (countChanged)='countChangedHandle($event)'></app-modification-task>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="notebook">
+    <div class="notebook__back" (click)="backtoDetail()">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+        Quay lại
+    </div>
+    <div class="heading">   
+        <b>Chỉnh sửa sổ ghi</b>
+    </div>
+    <div class="field-creation" 
+        *ngFor="let field of fieldList; let i=index; trackBy: trackByFn" 
+        [class.field-creation--isNotEdited]="!field.isEdited"
+        (click)="activeEditMode(i)"
+    >
+        <div class="field-creation__title">
+            <div class="field-creation__title__title-input">
+                <input type="text" 
+                    [(ngModel)]="!field.isEdited? fieldList[i]?.fieldName : fieldIsEditing.fieldName"
+                    name="field{{i}}"
+                    (blur)="resetFieldValue(i)"
+                    [class.input--editing]="field.isEdited"
+                >
+                <!-- [(ngModel)]="!field.isEdited? fieldList[i]?.title : fieldIsEditing.title"  -->
+                <!-- (keyup)="updateInputValue($event, i)" -->
+            </div>
+            <div class="field-creation__title__type" *ngIf="field.isEdited">
+                <select name="" id="">
+                    <option value=1>Văn bản</option>
+                    <!-- <option value="">hình ảnh</option>
+                    <option value="">Âm thanh</option> -->
+                </select>
+            </div>
+        </div>
+        <div class="field-creation__description">
+            <input type="text" placeholder="Văn bản" readonly>
+        </div >
+        <div class="field-creation__related-task" *ngIf="field.isEdited">
+            <div class="field-creation__related-task__title" *ngIf="field?.fieldTaskIds?.length > 0">
+                Công việc liên quan
+            </div>
+            <div class="field-creation__related-task__list" *ngIf="field.fieldTaskIds.length > 0">
+                <!-- <span class="field-creation__related-task__list__item" *ngFor="let task of field.task"> -->
+                    <mat-chip *ngFor="let task of taskNameList[i]">{{ task }}</mat-chip>
+                    <mat-chip (click)="opendAssignmentRelatedTask(i)">+</mat-chip>
+                <!-- </span> -->
+            </div>
+            <div class="field-creation__related-task__assign-btn" *ngIf="field.fieldTaskIds.length == 0" (click)="opendAssignmentRelatedTask(i)">
+                Gán công việc liên quan
+            </div>
+            <!-- <div class="field-creation__related-task__delete-btn">
+                <fa-icon [icon]="faTrash"></fa-icon>
+            </div> -->
+        </div>
+    </div>
+    <div class="field-creation"
+        
+        *ngIf="fieldList.length==0 || isDispleyAddNewForm"
+    >
+        <div class="field-creation__title">
+            <div class="field-creation__title__title-input">
+                <input type="text" [(ngModel)]="newField.fieldName" placeholder="Tên trường" class="input--modification">
+            </div>
+            <div class="field-creation__title__type" >
+                <select name="" id="" [(ngModel)]="newField.fieldTypeId">
+                    <option value=1>Văn bản</option>
+                </select>
+            </div>
+        </div>
+        <div class="field-creation__description">
+            <input type="text" placeholder="Văn bản" readonly>
+        </div >
+        <div class="field-creation__related-task">
+            <div class="field-creation__related-task__title" *ngIf="newField.fieldTaskIds.length>0">
+                Công việc liên quan
+            </div>
+            <div class="field-creation__related-task__list" *ngIf="newField.fieldTaskIds.length>0">
+                <span class="field-creation__related-task__list__item">
+                    <mat-chip *ngFor="let task of newField.fieldTaskIds">{{ task }}</mat-chip>
+                    <mat-chip (click)="opendAssignmentRelatedTask(fieldList.length)">+</mat-chip>
+                </span>
+            </div>
+            <div class="field-creation__related-task__assign-btn" *ngIf="newField.fieldTaskIds.length==0">
+                <div  (click)="opendAssignmentRelatedTask(fieldList.length)">Gán công việc liên quan</div>
+            </div>
+        </div>
+    </div>
+    <div (click)="addNewField()" class="field-creation__add-new-field">
+        Thêm trường mới
+    </div>
+    <div class="button">
+        <!-- <div class="button__add-new-field-btn" (click)="addNewField()">Thêm trường mới</div> -->
+        <div class="button__save-btn" (click)="addAllField()">Lưu</div>
+    </div>
+</div>
+

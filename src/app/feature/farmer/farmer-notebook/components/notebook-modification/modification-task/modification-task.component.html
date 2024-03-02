@@ -1,0 +1,59 @@
+<!-- <section>
+    <h3>Process name</h3>
+                <div class="selectAll highlight div_checkbox">
+                    <div *ngFor="let item of list" class="highlight">
+                        <div *ngIf="isParent(item.id); else notParent" class="div_parent">
+                            <input
+                            type="checkbox"
+                            id="{{ item.id }}"
+                            name="checked"
+                            [(ngModel)]="item.checked"
+                            (change)="onChecked(item.id, item.checked)"
+                            />
+                            <label for="{{ item.id }}">{{ item.title }}</label>
+                        </div>
+                        <ng-template #notParent >
+                            <ul>
+                                <input
+                                type="checkbox"
+                                id="{{ item.id }}"
+                                name="checked"
+                                [(ngModel)]="item.checked"
+                                (change)="onChecked(item.id, item.checked)"
+                                />
+                                <label for="{{ item.id }}">{{ item.title }}</label>
+                            </ul>
+                        </ng-template>
+                    </div>
+                </div>
+                <div *ngIf="selectedItems.length > 0; else noSelection">
+                    <mat-chip *ngFor="let item of selectedItems">
+                        {{item.title}}
+                    </mat-chip>
+                </div>
+                <ng-template #noSelection >
+                    <p>No item selected</p>
+                </ng-template>
+                    <p>You are choosing the tasks related to "Field name"</p>
+                    <button (click)="clearAll()">Clear All</button>
+                    <button >Assign</button>
+</section> -->
+
+<div class="task-list">
+    <div class="task-list__heading">
+        Gán công việc liên quan
+    </div>
+    <div class="task-list__task-name">
+        Trường nhập liệu: <b>{{ data.fieldname }}</b>
+    </div>
+    <div class="task-list__list">
+        <div class="task-list__list__item" *ngFor="let task of taskList; let i=index">
+            <input type="checkbox" name="selectedTask" id="{{task.taskId}}" value="{{task.taskId}}" tabindex="-1" (change)="checkCheckBoxvalue(task)" [checked]="data?.taskListId.includes(task.taskId)">
+            <label for="task{{i}}" class="task-list__list__item__name">{{ task.taskName }}</label>
+        </div>
+    </div>
+    <div class="task-list__action">
+        <div class="task-list__action__cancel-btn" (click)="onNoClick()">Hủy</div>
+        <div class="task-list__action__assign-btn" (click)="allCheckBox()" [mat-dialog-close]="selectedTaskId">Lưu</div>
+    </div>
+</div>

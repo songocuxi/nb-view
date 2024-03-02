@@ -1,0 +1,409 @@
+@import '../../../../../../assets/scss/sass-config.scss';
+// section{
+//     background-color: #E9EDF0;
+// }
+// h2{
+//     margin-bottom: -2%;
+//     margin-left: 2%;
+//     padding: 1%;
+// }
+
+// h3{
+//     margin-top: -1%;
+//     margin-bottom: 4%;
+//     margin-left: 1%;
+// }
+
+// .mat-divider, p ,h6{
+//     margin: 4%;
+// }
+
+// form{
+//     display: flex;
+// }
+
+// // div{
+// //     background-color: #E9EDF0;
+// //     position: relative;
+// //     margin-top: 1%;
+// //     margin-bottom: 3%;
+// //     margin-left: 1%;
+// //     margin-right: 3%;
+// //     padding: 1%;
+// // }
+
+// @media (max-width: 768px) {
+//     .mat-card-actions {
+//       text-align: center; /* Định vị các nút ở giữa trên màn hình nhỏ */
+//     }
+//   }
+
+
+
+// // input{
+// //     background-color: #f8f8f8;
+// //     text-align: left;
+// //     outline: none;
+// // }
+
+// // input:focus {
+// //     outline: none;
+// // }
+
+// // input:hover{
+// //     outline: none;
+// // }
+
+// select{
+//     background-color: #f8f8f8;
+//     text-align: left;
+//     outline: none;
+// }
+
+
+// select:hover{
+//     outline: none;
+// }
+
+
+
+// select:focus{
+//     outline: none;
+// }
+
+// button{
+//     height: 40px;
+//     width: 120px;
+//     color: #f8f8f8;
+//     background-color: #1a2848;
+//     position: relative;
+//     margin: 2%;
+//     border-radius: 5px;
+//     text-align: center;
+    
+// }
+
+// form{
+//     background-color: #E9EDF0;
+// }
+
+// ul{
+//     height: 50px;
+//     width: 94%;
+//     position: relative;
+//     left: 7%;
+//     background-color: #E9EDF0;
+//     text-align: left;
+// }
+
+
+
+// mat-divider{
+//     border: 2px solid black;
+// }
+
+mat-chip{
+    background-color: #f8f8f8;
+    margin: 8px;
+    padding: 4px;
+}
+
+// mat-expansion-panel-header{
+//     background-color: #E9EDF0;
+//     border-bottom-color: 2px solid black;
+// }
+
+// th, td {
+//     text-align: center;
+//     margin: 10px;
+//     padding: 10px;
+//     background-color: #E9EDF0;
+//     border: 3px solid ;
+//   }
+
+
+// .th_title{
+//     width: 100px;
+// }
+
+// .th_type{
+//     width: 50px;
+// }
+
+// .th_task{
+//     width: 400px;
+// }
+
+// .th_button{
+//     width: 75px;
+// }
+
+// .button_table{
+//     width: 70px;
+//     font-size: 14px;
+// }
+
+
+// .button_delete{
+//     left: 71%;
+// }
+
+// .div_parent{
+//     height: 50px;
+//     width: 100%;
+//     position: relative;
+//     background-color: #E9EDF0;
+//     text-align: left;
+// }
+
+// .mat-divider_small{
+//     width: 50%;
+// }
+
+// .small-div{
+//     margin-top: 20px;
+//     width: 70%;
+//     height: 250px;
+//     &__isNotEdited {
+//         height: 150px;
+//     }
+// }
+
+// .create_div{
+//     margin-bottom: 10px;
+// }
+
+// .row{
+//     background-color: #E9EDF0;
+// }
+
+// .select{
+//     height: 100%;
+//     width: 150px;
+//     background-color: #f8f8f8;
+//     text-align: left;
+//     border:solid;
+//     border-top-color: #f8f8f8;
+//     border-left-color: #f8f8f8;
+//     border-right-color: #f8f8f8;
+//     border-bottom-color: #f8f8f8;
+// }
+
+// .input{
+//     height: 40px;
+//     width: 85%;
+//     border:solid;
+//     border-top-color: #f8f8f8;
+//     border-left-color: #f8f8f8;
+//     border-right-color: #f8f8f8;
+//     border-bottom-color: #000000;
+// }
+
+// .bottom_border{
+//     background-color: #E9EDF0;
+//     border: solid;
+//     border-top-color: #E9EDF0;
+//     border-left-color: #E9EDF0;
+//     border-right-color: #E9EDF0;
+//     border-bottom-color: #000000;
+//     border-radius: 1%;
+// }
+
+// .container-fluid{
+//     background-color: #E9EDF0;
+// }
+
+// .highlight{
+//     background-color: #f8f8f8;
+// }
+
+
+
+
+
+// .create_button{
+//     height: 50px;
+//     width: 50px;
+//     top: 90px;
+//     left: 470px;
+//     background-color: #E9EDF0;
+//     color: black;
+//     border: #E9EDF0;
+// }
+
+// .button_remove{
+//     background-color: #E9EDF0;
+// }
+
+// .p_big{
+//     font-size: 20px;
+// }
+// .example-chip-list {
+//     width: 100%;
+// }
+// .select{
+//     height: 40px;
+//     width: 85%;
+//     border:solid;
+//     border-top-color: #f8f8f8;
+//     border-left-color: #f8f8f8;
+//     border-right-color: #f8f8f8;
+//     border-bottom-color: #000000;
+// }
+
+// .div_edit{
+//     width: 460px;
+// }
+
+
+.notebook {
+    margin: auto;
+    margin-top: 30px;
+    width: 40%;
+    padding-bottom: 40px;
+    &__back {
+        fa-icon {
+            margin-right: 5px;
+        }
+        padding: 20px 0;
+        cursor: pointer;
+    }
+    .heading{
+        font-size: 30px;
+
+    }
+    .field-creation {
+        background-color: #f8f8f8;
+        height: 250px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        &__title {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            input, select {
+                width: 100%;
+                height: 40px;
+                padding: 0 5px;
+                background-color: #f8f8f8;
+                border: none;
+                // border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+                transition: all 0.3s ease;
+                &:focus {
+                    outline: none;
+                    padding: 0 10px;
+                    transition: all 0.3s ease;
+                    background-color: white;
+                    @extend %shadow;
+                }
+            }
+            .input--editing {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+            }
+            select {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+            }
+            &__title-input {
+                width: 57%;
+                
+            }
+            &__type {
+                width: 40%;
+            }
+        }
+        &__description {
+            margin-top: 15px;
+            width: 57%;
+            input {
+                width:100%;
+                height: 40px;
+                padding: 0 5px;
+                background-color: #f8f8f8;
+                border: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+                &:focus {
+                    outline: none;
+                }
+            }
+    
+        }
+        &__related-task {
+            margin-top: 25px;
+            position: relative;
+            &__list {
+                width: 100%;
+                height: auto;
+                // border: 1px solid red;
+                margin-top: 15px;
+                // display: flex;
+                &__item {
+                    // border: 1px solid red;
+                    padding: 10px;
+                    height: 40px !important;
+                }
+                // span + span {
+                //     margin-left: 15px;
+                //     margin-top: 10px;
+                // }
+                
+            }
+            &__assign-btn {
+                cursor: pointer;
+                font-style: italic;
+            }
+            &__delete-btn {
+                cursor: pointer;
+                border: 1px solid red;
+                // display: flex;
+                // justify-content: right;
+                // position: ;
+            }
+        }
+        transition: height 0.5s ease;
+        &--isNotEdited {
+            height: 150px;
+            transition: height 0.5s ease;
+        }
+        .input--modification {
+            border: none;
+            border-bottom: 1px solid black;
+        }
+        &__add-new-field {
+            margin-top: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+    
+    .field-creation + .field-creation {
+        margin-top: 15px;
+    }
+
+    .button{
+        margin-top: 10px;
+        display: flex;
+        justify-content: right;
+        &__add-new-field-btn{
+            @include button(170px,50px, $dark-blue);
+            color: #f8f8f8;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+    
+        &__save-btn{
+            @include button(100px,50px, $dark-blue);
+            color: #f8f8f8;
+            border-radius: 3px;
+        }
+
+    }
+
+    
+    
+}
+
+::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+    background-color: #E9EDF0 !important;
+}

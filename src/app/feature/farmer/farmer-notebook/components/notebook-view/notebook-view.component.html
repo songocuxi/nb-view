@@ -1,0 +1,35 @@
+<div class="notebook">
+    <div class="notebook__back" (click)="backtoDetail()">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+        Quay lại
+    </div>
+    <div class="heading">
+        {{ processInfo.projectName }}
+    </div>
+    <!-- General infomation
+        
+        <div class="infomation-title__name">
+            Name
+            <div class="infomation-title__name-input">
+                <input>
+            </div>
+        </div>
+        <div class="infomation-title__address">
+            Address
+            <div class="infomation-title__address-input">
+                <input>
+            </div>
+        </div> -->
+    <div class="details">
+        Sổ nhật ký
+        <div class="infomation-title__name" *ngFor="let field of fieldList; let i=index">
+            {{ field.fieldName }}
+            <div class="infomation-title__name-input" >
+                <input [(ngModel)]="field?.fieldValues[0].value" (keyup)="onChangeInput()">
+            </div>
+        </div>
+    </div>
+    <div class="save-btn" (click)="save()">
+        Save
+    </div>
+</div>

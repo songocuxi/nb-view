@@ -1,0 +1,116 @@
+@import '../../../../../../../assets/scss/sass-config.scss';
+// section{
+//     background-color: #f8f8f8;
+// }
+
+// h3{
+//     margin-top: -1%;
+//     margin-bottom: 4%;
+//     margin-left: 1%;
+// }
+
+// div{
+//     background-color: #E9EDF0;
+//     position: relative;
+//     margin-top: 1%;
+//     margin-bottom: 3%;
+//     margin-left: 1%;
+//     margin-right: 3%;
+//     padding: 1%;
+// }
+
+// input{
+//     background-color: #f8f8f8;
+//     text-align: left;
+//     outline: none;
+// }
+
+// input:focus {
+//     outline: none;
+// }
+
+// input:hover{
+//     outline: none;
+// }
+
+// ul{
+//     height: 50px;
+//     width: 94%;
+//     position: relative;
+//     left: 7%;
+//     background-color: #E9EDF0;
+//     text-align: left;
+// }
+// button{
+//     height: 40px;
+//     width: 120px;
+//     color: #f8f8f8;
+//     background-color: #1a2848;
+//     position: relative;
+//     margin: 2%;
+//     border-radius: 5px;
+//     text-align: center;
+    
+// }
+
+
+
+// .highlight{
+//     background-color: #f8f8f8;
+// }
+
+.task-list {
+    width: 600px;
+    // height: 590px;
+    padding: 20px;
+    &__heading {
+        font: {
+            size: 25px;
+            weight: 500;
+        }
+    }
+    &__task-name {
+        margin-top: 20px;
+    }
+    &__list {
+        margin-top: 20px;
+        max-height: 400px;
+        // height: 400px;
+        overflow-y: auto;
+        &__item {
+            display: flex;
+            align-items: center;
+            background-color: #E9EDF0;
+            padding: 10px;
+            input{
+                margin-right: 8px;
+                margin-top: 2px;
+                height: 15px;
+                width: 15px;
+                background-color: $dark-blue !important;
+            }
+            input[type='checkbox'] {
+                accent-color: $dark-blue;
+            }
+        }
+        &__item+&__item{
+            margin-top: 5px;
+        }
+    }
+    &__action{
+        margin-top: 20px;
+        display: flex;
+        justify-content: right;
+        &__assign-btn{
+            @include button(100px,50px, $dark-blue);
+            color: white;
+            border-radius: 3px;
+        }
+        &__cancel-btn{
+            @include button(100px,50px, absolute);
+            border-radius: 3px;
+            margin-right: 10px;
+            color: black;
+        }
+    }
+}
